@@ -15,7 +15,7 @@ const Products = ({nombre, edad, club, funcionProps, apellido}) => {
     <h1>Componente de Productos</h1>
     <h2>Nombre: {nombre} {edad}</h2>
     <h2>Club: {name}; Estadio: {estadio}</h2>
-    <button onClick={funcionProps}>Ejecuta la funcion</button>
+    <button onClick={funcionProps}>Ejecuta la funcion para aumentar</button>
     </>
   )
 }
