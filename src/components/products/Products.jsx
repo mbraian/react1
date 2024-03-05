@@ -1,31 +1,47 @@
 import PropTypes from 'prop-types';
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { useContext } from 'react';
+import { ProductsProvider } from '../../context/ProductosContext';
 
-const Products = ({nombre, edad, club, funcionProps, apellido}) => {
-  const {name, estadio} = club;
-  console.log(nombre, "<-- PROPS1")
-  console.log(edad, "<-- PROPS2")
-  console.log(club, "club")
-
-  const suma = () => {
-    edad + 10 // "3810"
-  }
+const Products = () => {
+  const {productos} = useContext(ProductsProvider);
+  console.log(productos, "<-- Productos desde el contexto")
 
   return (
     <>
     <h1>Componente de Productos</h1>
-    <h2>Nombre: {nombre} {edad}</h2>
-    <h2>Club: {name}; Estadio: {estadio}</h2>
-    <button onClick={funcionProps}>Ejecuta la funcion para aumentar</button>
+    
+    {productos.length === 0 ? 
+      ( //con parentesis '()', el 'return es implicito
+        <h1>Aqui no hay ningun producto</h1>
+      ) : (
+        <Container>
+        <Row>
+        {productos.map( (producto) => (
+          <>
+          <Col xs={12} sm={6} md={4} lg={3}>
+          <Card style={{ width: '18rem' }} key={producto.id}>
+            <Card.Img variant="top" />
+            <Card.Body>
+              <Card.Title> {producto.nombre} </Card.Title>
+              <Card.Text> Precio: {producto.precio} </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+          </Col>
+          </>
+        ))}
+        </Row>
+        </Container>
+      )
+    }
+
     </>
   )
 }
 
 Products.propTypes = { // Forma de implementar seguridad en la aplicacion
-  nombre: PropTypes.string.isRequired, // Lo que reciba como 'nombre' debe ser String
-  edad: PropTypes.number,
-  apellido: PropTypes.any,
-  funcionProps: PropTypes.func,
-  club: PropTypes.object 
+  productos: PropTypes.array
 }
 
 export default Products

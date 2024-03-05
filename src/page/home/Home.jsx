@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react' // 'useState' no es un componente, estoy usando la funcionalidad
+//import { useState, useEffect } from 'react' // 'useState' no es un componente, estoy usando la funcionalidad
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CarouselHome from '../../components/carousel/Carousel';
 import Cards from '../../components/cards/Cards';
 import Information from '../../components/information/Information';
 import Products from '../../components/products/Products';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 
 const Home = () => {
-    const [count, setCount] = useState("");
-    console.log(count, "Estado inicial");
+    // const [count, setCount] = useState("");
+    // console.log(count, "Estado inicial");
     // const [nombre1, setNombre1] = useState("");
     // const [apellido1, setApellido1] = useState("");
 
-    const funcionProps = () => {
-        setCount(count +1);
-        //alert(`El numero es ${count}`)
-    }
+    // const funcionProps = () => {
+    //     setCount(count +1);
+    //     //alert(`El numero es ${count}`)
+    // }
 
 
     const club = {
@@ -37,32 +37,36 @@ const Home = () => {
     // useEffect(() =>{
     //     console.log("Componente montado"); // Acción cuando se monta el componente
     //     return () =>{
-    //         console.log("Componente desmontado"); // Acción cuando se desmonta el componente
-    //     }    
-    // }, [count] )
+        //         console.log("Componente desmontado"); // Acción cuando se desmonta el componente
+        //     }    
+        // }, [count] )
+        
 
-    //USO PRACTICO
-    useEffect( ()=> {
-        const obtenerDatos = async () => {
-            try{
-                // axios: funciona igual que fetch
-                const response = await axios.get("http://localhost:8000/users")
-                console.log(response, "<-- Respuesta");
-                console.log(response.data, "<-- Datos"); // Estos datos obtenidos, los guardo en un 'useState'(de usuarios)
-                console.log(response.data[0], "<-- 1er Dato----");
-                
-                setUsers(response.data);
-
-            }catch (error){
-                console.error(error);
-            }
-        }
-        obtenerDatos();
-    },[count]); // Cuando se actualice el 'count' se realiza una nueva peticion de usuarios
-
-    const [users, setUsers] = useState([]); // Ya que el 'response.data' de axios me devuelve un array, inicializamos con el array vacio.
+    //const [productos, setProductos] = useState([]) <----- NO VA MASS
     
-    console.log(users, "<-- [] de Usuarios")
+    //USO PRACTICO <--- NO VA MAS
+    // useEffect( ()=> {
+    //     const obtenerDatos = async () => {
+    //         try{
+    //             // axios: funciona igual que fetch
+    //             const response = await axios.get("http://localhost:8000/productos")
+    //             console.log(response, "<-- Respuesta");
+    //             console.log(response.data, "<-- Datos"); // Estos datos obtenidos, los guardo en un 'useState'(de usuarios)
+    //             console.log(response.data[0], "<-- 1er Dato----");
+                
+    //             setProductos(response.data)
+
+    //         }catch (error){
+    //             console.error(error);
+    //         }
+    //     }
+    //     obtenerDatos();
+    // },[]); 
+
+    // const [users, setUsers] = useState([]); // Ya que el 'response.data' de axios me devuelve un array, inicializamos con el array vacio.
+    
+    // console.log(users, "<-- [] de Usuarios")
+
 
     return (
     <>
@@ -86,12 +90,11 @@ const Home = () => {
                 <li>Footer</li>
             </ul>
 
-            <Products nombre={1} edad={38} apellido funcionProps={ funcionProps } club={club}/>
+            <Products />
 
-            <h2>{count}</h2>
-            <button onClick={ funcionProps }> Aumentar</button>
-
-            <button onClick={() => setCount(count -1) }> Disminuir</button>
+            {/*<h2>{count}</h2>
+             <button onClick={ funcionProps }> Aumentar</button>
+            <button onClick={() => setCount(count -1) }> Disminuir</button> */}
 
 
         </main>
