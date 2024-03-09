@@ -1,10 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductsProvider } from "../../context/ProductosContext";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Modal } from "react-bootstrap";
+import FormProductos from "../formProductos/FormProductos";
 
 
 const TablaProductos = () => {
-    const {productos} = useContext(ProductsProvider);
+    const { productos, deleteProducto } = useContext(ProductsProvider);
+    
+    const [show, setShow] = useState(false);
+    const [editarProducto, setEditarProducto] = useState(null);
+    const handleClose = () => setShow(false);
+    /**
+     * 
+     * @param {object} producto producto que deseamos editar
+     */
+    const handleEdit = (producto) => {
+      setEditarProducto(producto); // Al hacer click en 'editar' vamos a actualizar el state de 'editarProducto'
+      setShow(true);
+    };
 
     return (
     <>
@@ -27,14 +40,24 @@ const TablaProductos = () => {
               <td>{producto.nombre}</td>
               <td>{producto.precio}</td>
               <td>
-                <Button variant="warning">Editar</Button>
-                <Button variant="danger">Eliminar</Button>
+                <Button variant="warning" onClick={ () => handleEdit(producto) }>Editar</Button>
+                <Button variant="danger" onClick={ () => deleteProducto(producto.id) }>Eliminar</Button>
               </td>
             </tr>
             </>
           ))}
         </tbody>
       </Table>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Formulario de edicion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <FormProductos editarProducto={editarProducto} handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+
       </>
     )}
     </>

@@ -1,33 +1,42 @@
 {
-    "users": [
-        {
-            "name": "Lio Messi",
-            "email": "1@1.com",
-            "password": "123456",
-            "id": "asas"
-        },
-        {
-            "name": "Lio Messi",
-            "email": "2@2.com",
-            "password": "123456",
-            "id": "dsds"
-        }
-    ],
-    "productos": [
-        {
-            "nombre": "Producto 1",
-            "id": "1",
-            "precio": 100
-        },
-        {
-            "id": "2",
-            "nombre": "Producto 2",
-            "precio": 200
-        },
-        {
-            "id": "3",
-            "nombre": "Producto 3",
-            "precio": 300
-        }
-    ]
+  "users": [
+    {
+      "name": "Lio Messi",
+      "email": "1@1.com",
+      "password": "123456",
+      "id": "asas"
+    },
+    {
+      "name": "Lio Messi",
+      "email": "2@2.com",
+      "password": "123456",
+      "id": "dsds"
+    }
+  ],
+  "productos": [
+    {
+      "id": "bd5f652c-c089-439d-b872-a55f2863e68f",
+      "nombre": "EWE",
+      "precio": "22",
+      "imagen": "weew"
+    },
+    {
+      "id": "ed5c1704-ae11-41fc-a509-feb662914c49",
+      "nombre": "ass",
+      "precio": "1",
+      "imagen": "vsd"
+    },
+    {
+      "id": "5f96ccca-ff3f-4a8c-8a8c-85a885e24e42",
+      "nombre": "Gancia Brasilero",
+      "precio": "25",
+      "imagen": "ipoioass"
+    },
+    {
+      "id": "1603eb4d-e643-45f9-9aef-7764d6d89ecb",
+      "nombre": "ewweaf",
+      "precio": "",
+      "imagen": ""
+    }
+  ]
 }
