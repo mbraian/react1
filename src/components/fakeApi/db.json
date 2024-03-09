@@ -1,16 +1,32 @@
 {
   "users": [
     {
-      "name": "Lio Messi",
-      "email": "1@1.com",
-      "password": "123456",
-      "id": "asas"
+      "id": "f8297377-87b0-46a4-93fd-88640d3abe52",
+      "nombre": "b",
+      "email": "1@1",
+      "password": "1",
+      "isAdmin": false
     },
     {
-      "name": "Lio Messi",
-      "email": "2@2.com",
-      "password": "123456",
-      "id": "dsds"
+      "id": "aa544ab4-b38d-41c6-8591-bbdea3ceab05",
+      "nombre": "Lionel ",
+      "email": "2@2",
+      "password": "2",
+      "isAdmin": false
+    },
+    {
+      "id": "a630ff30-3cac-4840-953c-6038b48e7e17",
+      "nombre": "3",
+      "email": "3@3",
+      "password": "3",
+      "isAdmin": false
+    },
+    {
+      "id": "9f3a0909-6cd2-4b3c-a91d-35c721006166",
+      "nombre": "Cuti",
+      "email": "4@4",
+      "password": "4",
+      "isAdmin": false
     }
   ],
   "productos": [
