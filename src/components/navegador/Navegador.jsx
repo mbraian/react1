@@ -3,7 +3,6 @@ import {
   Container,
   Nav,
   Navbar,
-  NavDropdown,
   Button,
   Modal,
 } from "react-bootstrap";
@@ -25,7 +24,7 @@ const Navegador = () => {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  const { logOut } = useContext( UsersProvider);
+  const { logOut } = useContext(UsersProvider);
 
   return (
     <>
@@ -40,25 +39,17 @@ const Navegador = () => {
               <Nav className="me-auto">
                 {user ? "Bienvenido " + user.nombre : "No hay usuario"}
                 <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-                <Nav.Link onClick={() => navigate("/admin")}>
-                  Administrador
-                </Nav.Link>
 
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
+                {user?.isAdmin ? (
+                  <Nav.Link onClick={() => navigate("/admin")}>
+                    Administrador
+                  </Nav.Link>
+                ) : null}
+
+
+                
                 {user ? (
-                  <Button variant="danger" onClick={() => logOut() }>
+                  <Button variant="danger" onClick={() => logOut()}>
                     Cerrar sesión
                   </Button>
                 ) : (

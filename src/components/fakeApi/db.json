@@ -2,39 +2,60 @@
   "users": [
     {
       "id": "f8297377-87b0-46a4-93fd-88640d3abe52",
-      "nombre": "b",
+      "nombre": "1",
       "email": "1@1",
       "password": "1",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": "aa544ab4-b38d-41c6-8591-bbdea3ceab05",
       "nombre": "Lionel ",
       "email": "2@2",
       "password": "2",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": "a630ff30-3cac-4840-953c-6038b48e7e17",
-      "nombre": "3",
-      "email": "3@3",
+      "nombre": "3ertre",
+      "email": "3@3ertre",
       "password": "3",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": "9f3a0909-6cd2-4b3c-a91d-35c721006166",
-      "nombre": "Cuti",
-      "email": "4@4",
+      "nombre": "Cuti romero",
+      "email": "4@4romero",
       "password": "4",
+      "isAdmin": true
+    },
+    {
+      "id": "e5fe45a9-76d6-41d1-a288-7fca752ef3e4",
+      "nombre": "Messi",
+      "email": "m@m",
+      "password": "1",
+      "isAdmin": true
+    },
+    {
+      "id": "f52718b4-df42-4d20-8cac-bf9c5fd0911a",
+      "nombre": "2",
+      "email": "2@2",
+      "password": "2",
+      "isAdmin": false
+    },
+    {
+      "id": "2182ab53-98fd-418e-8749-89ce9c4b32ee",
+      "nombre": "5",
+      "email": "5@5",
+      "password": "5",
       "isAdmin": false
     }
   ],
   "productos": [
     {
       "id": "bd5f652c-c089-439d-b872-a55f2863e68f",
-      "nombre": "EWE",
-      "precio": "22",
-      "imagen": "weew"
+      "nombre": "EWE3",
+      "precio": "223",
+      "imagen": "weew3"
     },
     {
       "id": "ed5c1704-ae11-41fc-a509-feb662914c49",
